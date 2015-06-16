@@ -1,0 +1,106 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<script src="~/Scripts/bootstrap.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<html>
+<head>
+    <title>myPage</title>
+    <meta name="viewport" content="width=device-width" />
+
+
+
+</head>
+@section SignUp
+{
+<body style="background-image: url( ~/Content/themes/base/images/slid3.jpg )">
+
+   
+
+    <div class="text-center">
+
+        <div class="col-md-3">
+            <div class="signup-form">
+                <!--sign up form-->
+                <h2 style="color:ActiveBorder">New Student Signup!</h2>
+            
+                @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+                { 
+
+
+                    <label style="color:ActiveBorder">Full Name</label>
+                            <input type="text" name="FullName" required="required" placeholder="Name" /><br /><br />
+                    
+                    <label style="color:ActiveBorder">Username</label>
+                        <input id="Username" type="email" name="Username" required="required" placeholder="Email Address" />
+                        <input type="button" id="b1" value="check Availability"/>
+                         <p style="color:ActiveBorder" id="result"></p><br /><br />
+                    
+                    <label style="color:ActiveBorder">Password</label>
+                            <input type="password" name="Password" required="required" placeholder="Password" /><br /><br />
+                    
+                    <input type="hidden" name="SignUpDate" />
+                    <input type="hidden" name="Id" />
+
+                    <input  type="submit" class="btn btn-danger" value="Sign Up"/>
+                    
+                    @Scripts.Render("~/bundles/jquery")
+                    
+                    <script>
+    
+    $(document).ready(function () {
+
+
+
+        $('#b1').click(function () {
+
+            var Username = $('#Username').val();
+
+            $.getJSON("/Home/CheckUsername?Username=" + Username, function (data) {
+                $('#checking').hide();
+                if (data) {
+                    $('#result').text("User already exists in database");
+
+                }
+                else {
+
+                    $('#result').text("User Name is available");
+                }
+            });
+
+
+        });
+
+    });
+                    </script>
+                }
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="signup-form">
+                <!--sign up form-->
+                <h2 style ="color:ActiveBorder">University Signup!</h2>
+        
+                    @using (Html.BeginForm("Register", "Univ", FormMethod.Post))
+                    { 
+               
+
+                    <button type="submit" class="btn btn-danger">Click Here To SignUp as University</button>
+                    }
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+</body>
+    }
+</html>
+

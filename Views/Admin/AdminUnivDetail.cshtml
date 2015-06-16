@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+   
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <meta name="viewport" content="width=device-width" />
+    <title>AdminUnivDetail</title>
+    
+    <link href="~/Content/themes/base/minified/bootstrap.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.wysiwyg.js"></script>
+    <script src="~/Scripts/jquery-1.3.2.min.js"></script>
+    <script src="~/Scripts/thickbox.js"></script>
+    <script src="~/Scripts/jquery.pstrength-min.1.2.js"></script>
+
+    <link href="~/Content/themes/base/minified/grid.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/minified/ie.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/minified/ie6.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/minified/jquery.wysiwyg.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/minified/thickbox.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/minified/reset.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/minified/theme-blue.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/minified/styles.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <!-- Header. Status part -->
+    <div id="header-status">
+        <div class="container_12">
+            <div class="grid_8">
+                &nbsp;
+            </div>
+
+            <div class="grid_4">
+                <a href="~/Admin/AdminPage" id="AdminHome">
+                    Home
+                </a>
+                <a href="~/Home/Index" id="logout">
+                    Logout
+                </a>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div> <!-- End #header-status -->
+   
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Name</h2><p class="bg-info">@Model.Name</p>
+        </div>
+        <div class="col-md-3">
+            <h2>Description</h2>
+            <p class="bg-success">@Model.Description </p>
+        </div>
+        <div class="col-md-3">
+            <h2>Logo</h2>
+            <img src="~/images/@Model.Image" width="100" height="100" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Degree</h2>
+            <p class="bg-success">@Model.Degree </p>
+        </div>
+        <div class="col-md-3">
+            <h2>Merit1</h2>
+            <p class="bg-success">@Model.Merit1 </p>
+        </div>
+        <div class="col-md-3">
+            <h2>Merit2</h2>
+            <p class="bg-success">@Model.Merit2 </p>
+        </div>
+
+
+    </div>
+        
+</body>
+        
+</html>

@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Message";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UnivHome</title>
+    <link href="~/Content/themes/base/minified/bootstrap.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+@section SendMessage
+{
+    <body>
+        <div class="row">
+            <div class="col-md-8">
+                <img src="~/images/@Model.Image" width="100" height="100"/><br/>
+                <form action="/Home/SendIt">
+                    <input type="hidden" name="uniName" value=@Model.Name />
+                    <textarea name="Message" placeholder="Your message..." rows="4"></textarea><br /><br />
+                    <input type="submit" value="Send"/>
+                </form>
+               
+            </div>
+
+            <div class="col-md-4">
+                <div class="list-group">
+                    <a class="list-group-item active"> Departments</a>
+                    @foreach (string s in ViewBag.dept)
+                    {
+                        <a href="~/Home/SearchDegree/?Degree=@s" class="list-group-item">@s</a>
+                    }
+
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+}
+</html>

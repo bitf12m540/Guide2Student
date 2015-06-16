@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>myPage</title>
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/Content/themes/base/minified/bootstrap.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.js"></script>
+
+
+    
+
+    
+</head>
+<body>
+    @section Index
+    {
+  
+    <div class="row">
+       
+
+        <div class="col-md-9">
+
+            <img src="~/Content/themes/base/images/slid1.jpg" width="700" height="300" />
+
+
+        </div>
+
+        <div class="col-md-3" >
+            <div class="list-group">
+                <a class="list-group-item active"> Departments</a>
+                @foreach (string s in ViewBag.dept)
+        {
+           <a href="~/Home/SearchDegree/?Degree=@s"  class="list-group-item">@s</a>
+        }
+               
+                
+                
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+       
+        <div class="col-md-3">
+            <h2 style="color:blue">Apply Online</h2><p class="bg-info">Now you dont need to go universities for buying forms and face all the hustle. You can simply apply online by clicking on apply online.</p>
+        </div>
+        <div class="col-md-4">
+            <a href="/Home/CalculateMerit"><h2>Suggest University</h2></a>
+            <p class="bg-success">The most amazing thing which you have never experienced earlier you can guess your admission in universities just by entering your academic data. This website will help you to apply only to universities where you have a chance of admission and saving your time for applying in all universities  </p>
+        </div>
+        <div class="col-md-4">
+            <h2 style="color:blue">Search Made Easy</h2>
+            <p class="bg-danger">You can search for Universities not only by their name but through Provinces and Degrees as well so you have found the right place for your Guidance. You can contact us by opening Contact Us tag at the start of Page</p>
+        </div>
+    </div>
+
+    
+ 
+    }
+
+</body>
+</html>
+

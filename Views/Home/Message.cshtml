@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Message";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UnivHome</title>
+    <link href="~/Content/themes/base/minified/bootstrap.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+@section Message
+{
+    <body>
+        <div class="row">
+            <div class="col-md-8">
+               
+                @foreach(var s in Model)
+                { 
+                <h3>Your Message to (@s.Receiver):</h3><p>@s.Message</p><br/>
+                @*<img src="~/images/@s.Image" width="50" height="50"  />*@<h3>Reply from (@s.Receiver):</h3><p>@s.Reply</p><br />
+                    <p>---------------------------------------------------------------------------------</p>
+               }
+            </div>
+            
+            <div class="col-md-4">
+                <div class="list-group">
+                    <a class="list-group-item active"> Departments</a>
+                    @foreach (string s in ViewBag.dept)
+                    {
+                        <a href="~/Home/SearchDegree/?Degree=@s" class="list-group-item">@s</a>
+                    }
+
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+}
+</html>

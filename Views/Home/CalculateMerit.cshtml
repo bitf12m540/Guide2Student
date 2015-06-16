@@ -1,0 +1,89 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<!DOCTYPE html>
+<script src="~/Scripts/bootstrap.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CalculateMerit</title>
+</head>
+@section CalculateMerit
+{
+<body style="background-image: url( ~/Content/themes/base/images/meritcalculate.jpeg )">
+    
+
+   
+    <div class="row">
+        <div class="col-md-8">
+
+        <div class="text-center">
+            <!--sign up form-->
+
+            <h2 style="background-color:cadetblue">Enter Your Marks</h2>
+            <div style="background-color:ActiveBorder" class="form-group">
+                <form action="/Home/SuggestedUniv" method="post" class="form-group">
+                    <div class="form-group">
+                        <label>Inter part-1 </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="Inter-1" />
+                    </div> 
+                    <div class="form-group">
+                        <label>Inter part-2</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="Inter-2" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label style="color:red">If you are Awaiting your Result insert expected marks</label>
+                    </div>
+                    <br />
+
+                    <div class="form-group">
+                        <label>Degree</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Degree" placeholder="Arts or etc..." />
+                    </div>
+                    <div class="form-group">
+                        <label style="background-color:cadetblue">Province</label>
+                    </div>
+                    <div class="form-group">
+                        <select class="input-medium" name="Province">
+                            <option value="Punjab" selected="selected">Punjab</option>
+                            <option value="KPK">KPK</option>
+                            <option value="Sindh">Sindh</option>
+                            <option value="Balochistan">Balochistan</option>
+                        </select>
+                    </div>
+
+                    <br /><button type="submit" class="btn btn-success">Suggest Universities</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+        <div class="col-md-4">
+            <div class="list-group">
+                <a class="list-group-item active"> Departments</a>
+                @foreach (string s in ViewBag.dept)
+                {
+                    <a href="SearchDegree/?Degree=@s" class="list-group-item">@s</a>
+                }
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+        
+</body>
+    }
+</html>

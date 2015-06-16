@@ -1,0 +1,100 @@
+﻿@{
+    Layout = null;
+    
+}
+
+<!DOCTYPE html>
+<script src="~/Scripts/bootstrap.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<html>
+<head>
+    <title>myPage</title>
+    <meta name="viewport" content="width=device-width" />
+
+
+
+</head>
+
+
+    
+<body style="background-image: url( ~/Content/themes/base/images/slid2.jpg ) ">
+    <nav class="navbar navbar-inverse  ">
+
+        <div class="navbar-header navbar-left ">
+            <a class="navbar-brand " href="#">Guide 2 Student</a>
+        </div>
+
+        <div>
+            <ul class="nav  navbar-nav navbar-left">
+                <li class="active"><a href="~/Home/Index">Home</a></li>
+
+                <li><a href="~/Home/ContactUs">Contact Us</a>  </li>
+
+            </ul>
+        </div>
+
+        <div class="navbar-form navbar-right">
+            <a class="navbar-brand " href="~/Home/SignUpPage">Sign Up</a>
+            <a class="navbar-brand " href="~/Home/SignIn">Sign In</a>
+
+        </div>
+
+        <div class="search_box pull-center">
+            <form action="/Home/Search" method="post">
+                <input type="text" name="search" placeholder="Search" />
+                <button type="submit" class="btn btn-danger">Search</button>
+            </form>
+        </div>
+
+    </nav>
+    <div class=" text-center">
+
+
+        <div class="container_12">
+            <!--sign up form-->
+            <h2 style="background-color:sandybrown">SignIn!</h2>
+
+            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+            {
+
+
+                <input type="email" name="Email" required="required" placeholder="Email Address" /><br /><br />
+                <input type="password" name="Password" required="required" placeholder="Password" /><br /><br />
+
+
+                <button type="submit" class="btn btn-danger">Login</button><label style="color:red">@ViewBag.error</label>
+
+            }
+
+
+        </div>
+        <div class="container_12">
+            <!--sign up form-->
+            <h2 style="background-color:sandybrown">University SignIn!</h2>
+
+
+            @using (Html.BeginForm("Login", "Univ"))
+            {
+
+
+                <input type="email" name="Email" required="required" placeholder="Email Address" /><br /><br />
+                <input type="password" name="Password" required="required" placeholder="Password" /><br /><br />
+
+
+                <button type="submit" class="btn btn-danger">Login</button><label>@ViewBag.error</label>
+            }
+
+        </div>
+
+
+
+    </div>
+
+</body>
+
+    
+
+
+
+</html>
+

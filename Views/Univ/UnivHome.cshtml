@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UnivHome</title>
+    <link href="~/Content/themes/base/minified/bootstrap.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-inverse  ">
+
+        <div class="navbar-header navbar-left ">
+            <a class="navbar-brand " >University Panel</a>
+        </div>
+
+        <div>
+            <ul class="nav  navbar-nav navbar-left">
+
+                <li><a href="/Univ/UnivHome">Home</a></li>
+                <li><a href="/Univ/Update/@Model.Id">Edit</a></li>
+                <li><a href="/Univ/Inbox">Inbox</a></li>
+                <li><a href="/Univ/Applicants">Applicants</a></li>
+
+            </ul>
+        </div>
+        <div class="navbar-form navbar-right">
+            <a class="navbar-brand " href="/Univ/Logout">Log Out</a>
+        </div>
+
+    </nav>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Name</h2><p class="bg-info">@Model.Name</p>
+        </div>
+        <div class="col-md-3">
+            <h2>Description</h2>
+            <p class="bg-success">@Model.Description </p>
+        </div>
+        <div class="col-md-3">
+            <h2>Image</h2>
+            <img src="~/images/@Model.Image" width="100" height="100"/>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Degree</h2>
+            <p class="bg-success">@Model.Degree </p>
+        </div>
+        <div class="col-md-3">
+            <h2>Merit1</h2>
+            <p class="bg-success">@Model.Merit1 </p>
+        </div>
+        <div class="col-md-3">
+            <h2>Merit2</h2>
+            <p class="bg-success">@Model.Merit2 </p>
+        </div>
+
+
+    </div>
+    
+</body>
+    
+</html>
+
